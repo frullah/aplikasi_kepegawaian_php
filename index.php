@@ -40,8 +40,9 @@ $employees = $db->find_all("SELECT * FROM pegawai");
             <td><?= $employee['nama'] ?></td>
             <td><?= Helper::jenis_kelamin($employee['jenis_kelamin']) ?></td>
             <td><?= Helper::format_date($employee['tanggal_lahir']) ?></td>
-            <td>
+            <td class="fit">
               <a class="btn btn-primary" href="ubah.php?id=<?= $employee['id'] ?>">Ubah</a>
+              <a class="btn btn-danger" href="hapus.php?id=<?= $employee['id'] ?>">Hapus</a>
             </td>
           </tr>
         <? endforeach ?>

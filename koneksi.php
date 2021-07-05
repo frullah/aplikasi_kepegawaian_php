@@ -17,9 +17,13 @@ class Database {
     return $statement->fetchAll();
   }
 
-  public function insert($sql, $params = null) {
+  public function execute($sql, $params = null) {
     $statement = $this->db->prepare($sql);
     $statement->execute($params);
+    return $statement;
+  }
+  public function insert($sql, $params = null) {
+    $this->execute($sql, $params);
     return $this->db->lastInsertId();
   }
 }
