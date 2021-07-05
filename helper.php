@@ -10,6 +10,10 @@ class Helper {
       return null;
     }
 
+    if (is_string($date)) {
+      $date = date_create($date);
+    }
+
     return date_format($date, "d F Y");
   }
 
