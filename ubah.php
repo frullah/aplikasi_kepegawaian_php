@@ -22,7 +22,7 @@ $data = (object)$list_pegawai[0];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <? include "./templates/html_head.php" ?>
 <body>
   <main class="container small-container py-4">

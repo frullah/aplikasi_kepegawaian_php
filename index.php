@@ -10,7 +10,7 @@ $list_pegawai = $db->find_all("SELECT * FROM pegawai");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <? include "./templates/html_head.php" ?>
 <body>
   <main class="container py-4">
