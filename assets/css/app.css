@@ -1,0 +1,8 @@
+.container.small-container {
+  max-width: 540px;
+}
+
+td.fit, th.fit {
+  white-space: nowrap;
+  width: 1px;
+}
