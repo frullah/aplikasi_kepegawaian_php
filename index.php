@@ -15,6 +15,8 @@ $employees = $db->find_all("SELECT * FROM pegawai");
 <body>
   <main class="container py-4">
     <h4 class="mb-4">Aplikasi Kepegawaian</h4>
+
+    <? include "./templates/flash.php" ?>
     
     <section class="mb-3">
       <a class="btn btn-primary" href="tambah.php">Tambah Data Pegawai</a>
