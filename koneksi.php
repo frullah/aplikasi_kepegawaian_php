@@ -12,9 +12,7 @@ class Database {
   }
 
   public function find_all($sql, $params = null) {
-    $statement = $this->db->prepare($sql);
-    $statement->execute($params);
-    return $statement->fetchAll();
+    return $this->execute($sql, $params)->fetchAll();
   }
 
   public function execute($sql, $params = null) {
