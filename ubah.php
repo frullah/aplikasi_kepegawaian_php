@@ -1,7 +1,7 @@
 <?php
 
 if (empty($_GET['id'])) {
-  exit(header("Location: 'index.php'"));
+  exit(header("Location: index.php"));
 }
 
 require "./koneksi.php";
@@ -14,7 +14,7 @@ $list_pegawai = $db->find_all(
 );
 
 if (empty($list_pegawai)) {
-  exit(header("Location: 'index.php'"));
+  exit(header("Location: index.php"));
 }
 
 $data = (object)$list_pegawai[0];
@@ -32,7 +32,7 @@ $data = (object)$list_pegawai[0];
       <a class="btn btn-danger" href="index.php">Kembali</a>
     </section>
 
-    <form action="proses_tambah.php" method="post">
+    <form action="proses_ubah.php" method="post">
       <? include "./templates/pegawai/form.php" ?>
       <button class="btn btn-primary" type="submit">Ubah</button>
     </form>

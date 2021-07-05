@@ -1,3 +1,5 @@
+<input type="hidden" name="id" value="<?= $data->id ?>">
+
 <div class="mb-3">
   <label for="nip">NIP</label>
   <input value="<?= $data->nip ?>" class="form-control" type="text" name="nip" pattern="[0-9]{18}" placeholder="Nomor Induk Pegawai">

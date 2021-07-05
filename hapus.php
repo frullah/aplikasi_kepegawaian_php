@@ -1,7 +1,7 @@
 <?php
 
 if (empty($_GET['id'])) {
-  exit(header("Location: 'index.php'"));
+  exit(header("Location: index.php"));
 }
 
 require "./koneksi.php";
