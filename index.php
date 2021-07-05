@@ -5,7 +5,7 @@ require "./helper.php";
 
 $db = new Database();
 
-$employees = $db->find_all("SELECT * FROM pegawai");
+$list_pegawai = $db->find_all("SELECT * FROM pegawai");
 
 ?>
 
@@ -34,17 +34,17 @@ $employees = $db->find_all("SELECT * FROM pegawai");
       </thead>
       <tbody>
         <? $row = 1 ?>
-        <? foreach ($employees as $employee): ?>
+        <? foreach ($list_pegawai as $pegawai): ?>
           <tr>
             <td class="fit"><?= $row++ ?></td>
-            <td class="fit"><?= $employee['nip'] ?></td>
-            <td><?= $employee['nama'] ?></td>
-            <td><?= Helper::jenis_kelamin($employee['jenis_kelamin']) ?></td>
-            <td><?= Helper::format_date($employee['tanggal_lahir']) ?></td>
-            <td><?= $employee['gaji'] ?></td>
+            <td class="fit"><?= $pegawai['nip'] ?></td>
+            <td><?= $pegawai['nama'] ?></td>
+            <td><?= Helper::jenis_kelamin($pegawai['jenis_kelamin']) ?></td>
+            <td><?= Helper::format_date($pegawai['tanggal_lahir']) ?></td>
+            <td><?= $pegawai['gaji'] ?></td>
             <td class="fit">
-              <a class="btn btn-primary" href="ubah.php?id=<?= $employee['id'] ?>">Ubah</a>
-              <a class="btn btn-danger" href="hapus.php?id=<?= $employee['id'] ?>">Hapus</a>
+              <a class="btn btn-primary" href="ubah.php?id=<?= $pegawai['id'] ?>">Ubah</a>
+              <a class="btn btn-danger" href="hapus.php?id=<?= $pegawai['id'] ?>">Hapus</a>
             </td>
           </tr>
         <? endforeach ?>
