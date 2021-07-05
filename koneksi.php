@@ -11,13 +11,13 @@ class Database {
     );
   }
 
-  public function find_all($sql) {
+  public function find_all($sql, $params = null) {
     $statement = $this->db->prepare($sql);
-    $statement->execute();
+    $statement->execute($params);
     return $statement->fetchAll();
   }
 
-  public function insert($sql, $params) {
+  public function insert($sql, $params = null) {
     $statement = $this->db->prepare($sql);
     $statement->execute($params);
     return $this->db->lastInsertId();
