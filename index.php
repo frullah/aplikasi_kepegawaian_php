@@ -24,22 +24,24 @@ $employees = $db->find_all("SELECT * FROM pegawai");
     
     <table class="table table-responsive table-bordered">
       <thead>
-        <th>No.</th>
+        <th class="fit">No.</th>
         <th class="fit">NIP</th>
         <th>Nama</th>
         <th>Jenis Kelamin</th>
         <th>Tanggal Lahir</th>
+        <th>Gaji</th>
         <th>Aksi</th>
       </thead>
       <tbody>
         <? $row = 1 ?>
         <? foreach ($employees as $employee): ?>
           <tr>
-            <td><?= $row++ ?></td>
+            <td class="fit"><?= $row++ ?></td>
             <td class="fit"><?= $employee['nip'] ?></td>
             <td><?= $employee['nama'] ?></td>
             <td><?= Helper::jenis_kelamin($employee['jenis_kelamin']) ?></td>
             <td><?= Helper::format_date($employee['tanggal_lahir']) ?></td>
+            <td><?= $employee['gaji'] ?></td>
             <td class="fit">
               <a class="btn btn-primary" href="ubah.php?id=<?= $employee['id'] ?>">Ubah</a>
               <a class="btn btn-danger" href="hapus.php?id=<?= $employee['id'] ?>">Hapus</a>
