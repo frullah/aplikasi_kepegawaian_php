@@ -5,8 +5,7 @@ require "./helper.php";
 
 $db = new Database();
 $sql = "INSERT INTO pegawai (id, nip, nama, jenis_kelamin, tanggal_lahir, gaji)
-  VALUES(NULL, :nip, :nama, :jenis_kelamin, :tanggal_lahir, :gaji)
-";
+  VALUES(NULL, :nip, :nama, :jenis_kelamin, :tanggal_lahir, :gaji)";
 
 try {    
   $db->insert($sql, [

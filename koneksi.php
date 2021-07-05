@@ -21,8 +21,7 @@ class Database {
     return $statement;
   }
   public function insert($sql, $params = null) {
-    $this->execute($sql, $params);
-    return $this->db->lastInsertId();
+    return $this->execute($sql, $params)->rowCount();
   }
 }
 
