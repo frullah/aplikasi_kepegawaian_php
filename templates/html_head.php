@@ -6,4 +6,6 @@
 
   <link rel="stylesheet" href="assets/css/app.css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <script type="text/javascript" src="assets/js/app.js"></script>
 </head>

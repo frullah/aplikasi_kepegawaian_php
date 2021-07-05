@@ -29,6 +29,7 @@ $employees = $db->find_all("SELECT * FROM pegawai");
         <th>Nama</th>
         <th>Jenis Kelamin</th>
         <th>Tanggal Lahir</th>
+        <th>Aksi</th>
       </thead>
       <tbody>
         <? $row = 1 ?>
@@ -39,6 +40,9 @@ $employees = $db->find_all("SELECT * FROM pegawai");
             <td><?= $employee['nama'] ?></td>
             <td><?= Helper::jenis_kelamin($employee['jenis_kelamin']) ?></td>
             <td><?= Helper::format_date($employee['tanggal_lahir']) ?></td>
+            <td>
+              <a class="btn btn-primary" href="ubah.php?id=<?= $employee['id'] ?>">Ubah</a>
+            </td>
           </tr>
         <? endforeach ?>
       </tbody>
