@@ -21,3 +21,8 @@
   <label for="tanggal_lahir">Tanggal lahir</label>
   <input value="<?= $data->tanggal_lahir ?>" class="form-control" type="date" name="tanggal_lahir">
 </div>
+
+<div class="mb-3">
+  <label for="gaji">Gaji</label>
+  <input value="<?= $data->gaji ?>" class="form-control" type="number" name="gaji" required>
+</div>

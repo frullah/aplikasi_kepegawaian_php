@@ -25,7 +25,7 @@ $data = (object)$list_pegawai[0];
 <html lang="en">
 <? include "./templates/html_head.php" ?>
 <body>
-  <main class="container py-4">
+  <main class="container small-container py-4">
     <h4 class="mb-4">Ubah Data Pegawai</h4>
     
     <section class="mb-3">
@@ -34,7 +34,7 @@ $data = (object)$list_pegawai[0];
 
     <form action="proses_tambah.php" method="post">
       <? include "./templates/pegawai/form.php" ?>
-      <button class="btn btn-primary" type="submit">Tambah</button>
+      <button class="btn btn-primary" type="submit">Ubah</button>
     </form>
   </main>
 </body>

@@ -11,7 +11,7 @@ $data = (object)null;
 <html lang="en">
 <? include "./templates/html_head.php" ?>
 <body>
-  <main class="container py-4">
+  <main class="container small-container py-4">
     <h4 class="mb-4">Tambah Data Pegawai</h4>
     
     <section class="mb-3">
