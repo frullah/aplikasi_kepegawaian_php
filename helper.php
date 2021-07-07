@@ -37,8 +37,12 @@ class Helper {
 
   public static function flash() {
     if (self::$flash === null) {
-      self::$flash = (object)$_SESSION['flash'];
-      unset($_SESSION['flash']);
+      if (isset($_SESSION['flash'])) {
+        self::$flash = (object)$_SESSION['flash'];
+        unset($_SESSION['flash']);
+      } else {
+        self::$flash = (object)null;
+      }
     }
     
     return self::$flash;

@@ -5,7 +5,17 @@ require "./helper.php";
 
 $db = new Database();
 
-$list_pegawai = $db->find_all("SELECT * FROM pegawai");
+$teks_pencarian = null;
+
+if (isset($_GET["cari"])) {
+  $teks_pencarian = $_GET["cari"];
+  
+  $list_pegawai = $db->find_all("SELECT * FROM pegawai WHERE nama LIKE :search", [
+    'search' => "%${teks_pencarian}%"
+  ]);
+} else {
+  $list_pegawai = $db->find_all("SELECT * FROM pegawai");
+}
 
 ?>
 
@@ -21,7 +31,14 @@ $list_pegawai = $db->find_all("SELECT * FROM pegawai");
     <section class="mb-3">
       <a class="btn btn-primary" href="tambah.php">Tambah Data Pegawai</a>
     </section>
-    
+
+    <section class="mb-3" aria-label="pencarian-tabel">
+      <form action="index.php">
+        <label for="cari">Cari</label>
+        <input type="text" name="cari" placeholder="Nama pegawai" value="<?= $teks_pencarian ?>">
+      </form>
+    </section>
+
     <table class="table table-responsive table-bordered">
       <thead>
         <th class="fit">No.</th>
